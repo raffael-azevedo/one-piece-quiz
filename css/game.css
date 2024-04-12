@@ -24,3 +24,11 @@
   padding: 1.5rem;
   width: 100%;
 }
+
+.correct {
+  background-color: #93cf59;
+}
+
+.incorrect {
+  background-color: #f8de3c;
+}
