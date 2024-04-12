@@ -8,41 +8,39 @@ let questionCounter = 0;
 let availableQuestions = [];
 let questions = [
   {
-    question: "Inside which HTML element do we put the JavaScript??",
-    choice1: "<script>",
-    choice2: "<javascript>",
-    choice3: "<js>",
-    choice4: "<scripting>",
+    question: "Who is Condoriano??",
+    choice1: "Actually Con D. Oriano, the real Joy Boy",
+    choice2: "Isn't that Robin?",
+    choice3: "Former Marine, now former Strawhat",
+    choice4: "Who?",
     answer: 1,
   },
   {
-    question:
-      "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    choice1: "<script href='xxx.js'>",
-    choice2: "<script name='xxx.js'>",
-    choice3: "<script src='xxx.js'>",
-    choice4: "<script file='xxx.js'>",
+    question: "Who has the biggest bust among all One Piece characters?",
+    choice1: "Nami",
+    choice2: "Zoro",
+    choice3: "Boa Hancock",
+    choice4: "Big Mom",
     answer: 3,
   },
   {
-    question: " How do you write 'Hello World' in an alert box?",
-    choice1: "msgBox('Hello World');",
-    choice2: "alertBox('Hello World');",
-    choice3: "msg('Hello World');",
-    choice4: "alert('Hello World');",
+    question: "How many swords Zoro had in total?",
+    choice1: "4",
+    choice2: "5",
+    choice3: "7",
+    choice4: "9",
     answer: 4,
   },
 ];
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 4;
 
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
   getNewQuestion();
-  console.log(availableQuestions);
 };
 
 getNewQuestion = () => {
@@ -59,18 +57,29 @@ getNewQuestion = () => {
   availableQuestions.splice(questionIndex, 1);
   acceptingAnswers = true;
 
-  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    return window.location.assign("/end.html");
+  if (questionCounter >= MAX_QUESTIONS || availableQuestions.length === 0) {
+    // return window.location.assign("/end.html");
+    setTimeout(() => {
+      return window.location.assign("http://127.0.0.1:5500/");
+    }, 800);
   }
 };
 
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
     if (!acceptingAnswers) return;
-
+    acceptingAnswers = false;
     let selectedChoice = e.target;
     let selectedAnswer = selectedChoice.dataset["number"];
-    getNewQuestion();
+
+    const classToApply =
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 750);
   });
 });
 
