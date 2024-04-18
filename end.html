@@ -4,8 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thanks for playing!</title>
+    <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
-    <h1>bye bye</h1>
+    <div class="container">
+      <div id="end" class="flex-center flex-column">
+        <h1 id="finalScore"></h1>
+        <form action="">
+          <input type="text" name="username" id="usr" placeholder="username" />
+        </form>
+        <button
+          type="submit"
+          class="btn"
+          id="saveScoreBtn"
+          onclick="saveHighScore(event)"
+          disabled
+        >
+          Submit score
+        </button>
+        <a class="btn" href="/index.html">Back to the Home</a>
+        <a class="btn" href="/game.html">Play Again?</a>
+      </div>
+    </div>
   </body>
+  <script src="./js/end.js"></script>
 </html>
