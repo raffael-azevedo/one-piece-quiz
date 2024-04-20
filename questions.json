@@ -1,0 +1,26 @@
+[
+  {
+    "question": "Who is Condoriano??",
+    "choice1": "Actually Con D. Oriano, the real Joy Boy",
+    "choice2": "Isn't that Robin?",
+    "choice3": "Former Marine, now former Strawhat",
+    "choice4": "Who?",
+    "answer": 1
+  },
+  {
+    "question": "Who has the biggest bust among all One Piece characters?",
+    "choice1": "Nami",
+    "choice2": "Zoro",
+    "choice3": "Boa Hancock",
+    "choice4": "Big Mom",
+    "answer": 3
+  },
+  {
+    "question": "How many swords Zoro had in total?",
+    "choice1": "4",
+    "choice2": "5",
+    "choice3": "7",
+    "choice4": "9",
+    "answer": 4
+  }
+]
